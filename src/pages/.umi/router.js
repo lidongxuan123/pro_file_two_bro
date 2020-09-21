@@ -8,7 +8,7 @@ import {
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@@/history';
-import RendererWrapper0 from 'C:/Users/DELL/Desktop/MyProject/EnvironmentalMgrB/src/pages/.umi/LocaleWrapper.jsx';
+import RendererWrapper0 from 'C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/pages/.umi/LocaleWrapper.jsx';
 import _dvaDynamic from 'dva/dynamic';
 
 const Router = require('dva/router').routerRedux.ConnectedRouter;
@@ -18,20 +18,9 @@ const routes = [
     path: '/',
     component: __IS_BROWSER
       ? _dvaDynamic({
-          component: () => import(/* webpackChunkName: "p__Mooc" */ '../Mooc'),
-          LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/EnvironmentalMgrB/src/components/PageLoading/index')
-            .default,
-        })
-      : require('../Mooc').default,
-    exact: true,
-  },
-  {
-    path: '/work-space',
-    component: __IS_BROWSER
-      ? _dvaDynamic({
           component: () =>
             import(/* webpackChunkName: "p__WorkSpace" */ '../WorkSpace'),
-          LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/EnvironmentalMgrB/src/components/PageLoading/index')
+          LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
             .default,
         })
       : require('../WorkSpace').default,
@@ -40,7 +29,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('C:/Users/DELL/Desktop/MyProject/EnvironmentalMgrB/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/node_modules/_umi-build-dev@1.18.5@umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: true },
       ),
