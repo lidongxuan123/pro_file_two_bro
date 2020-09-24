@@ -1,0 +1,39 @@
+@padding:10px;
+.app{
+    width: 100%;
+    height: 100%;
+}
+.menu {
+  height: 60px;
+  line-height: 60px;
+}
+.menu_ui{
+    list-style: none;
+    height: 60px;
+    background: #13227a;
+    li {
+        display: inline-block;
+        padding: 0 10px;
+        color: white;
+        img {
+            width: 24px;
+        }
+    }
+}
+@content_width: 'calc(100% - 60px)';
+div.content_flex {
+    width:100%;
+    height: calc(100% - 60px);
+    background: #DFDFDF;
+    display: flex;
+    justify-content: flex-start;
+    div.content_flex_left{
+        width: 200px;
+        height:100%;
+        background: #333;
+    }
+    div.style.content_flex_right{
+        width: 0;
+        flex-grow: 1;
+    }
+}
