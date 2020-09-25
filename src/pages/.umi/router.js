@@ -27,6 +27,18 @@ const routes = [
     exact: true,
   },
   {
+    path: '/upload',
+    component: __IS_BROWSER
+      ? _dvaDynamic({
+          component: () =>
+            import(/* webpackChunkName: "p__Upload" */ '../Upload'),
+          LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+            .default,
+        })
+      : require('../Upload').default,
+    exact: true,
+  },
+  {
     component: () =>
       React.createElement(
         require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/node_modules/_umi-build-dev@1.18.5@umi-build-dev/lib/plugins/404/NotFound.js')

@@ -4,10 +4,16 @@ import BasicLayout from '../../Layout/layout';
 import 'antd/dist/antd.css'
 
 const Workspace = (props) => {
+  const { history } = props;
+
+  const handleRouter = () => {
+    history.push({ pathname: '/upload' });
+  };
+
   return (
     <div className={style.main}>
       <BasicLayout>
-        123
+        <span onClick={handleRouter}>123</span>
       </BasicLayout>
     </div>
   );

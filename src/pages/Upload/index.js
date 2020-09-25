@@ -1,8 +1,13 @@
 import React from 'react';
+import BasicLayout from '../../Layout/layout';
 
 const Upload = props => {
   return(
-    <div>4324</div>
+    <div>
+      <BasicLayout>
+        upload
+      </BasicLayout>
+    </div>
   )
 };
 
