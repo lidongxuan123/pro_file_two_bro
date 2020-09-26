@@ -1,6 +1,5 @@
 import React from 'react';
 import style from './index.less';
-import BasicLayout from '../../Layout/layout';
 import 'antd/dist/antd.css'
 
 const Workspace = (props) => {
@@ -12,9 +11,7 @@ const Workspace = (props) => {
 
   return (
     <div className={style.main}>
-      <BasicLayout>
-        <span onClick={handleRouter}>123</span>
-      </BasicLayout>
+      <span onClick={handleRouter}>123</span>
     </div>
   );
 }

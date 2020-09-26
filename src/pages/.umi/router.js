@@ -8,7 +8,7 @@ import {
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@@/history';
-import RendererWrapper0 from 'F:/react_file/pro_file_two_bro/src/pages/.umi/LocaleWrapper.jsx';
+import RendererWrapper0 from 'C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/pages/.umi/LocaleWrapper.jsx';
 import _dvaDynamic from 'dva/dynamic';
 
 const Router = require('dva/router').routerRedux.ConnectedRouter;
@@ -19,43 +19,124 @@ const routes = [
     component: __IS_BROWSER
       ? _dvaDynamic({
           component: () =>
-            import(/* webpackChunkName: "p__WorkSpace" */ '../WorkSpace'),
-          LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
+            import(/* webpackChunkName: "layouts__index" */ '../../layouts/index.js'),
+          LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
             .default,
         })
-      : require('../WorkSpace').default,
-    exact: true,
-  },
-  {
-    path: '/operation',
-    component: __IS_BROWSER
-      ? _dvaDynamic({
-          component: () =>
-            import(/* webpackChunkName: "p__OperationPage" */ '../OperationPage'),
-          LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
-            .default,
-        })
-      : require('../OperationPage').default,
-    exact: true,
-  },
-  {
-    path: '/course-ware',
-    component: __IS_BROWSER
-      ? _dvaDynamic({
-          component: () =>
-            import(/* webpackChunkName: "p__CoursewarePage" */ '../CoursewarePage'),
-          LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
-            .default,
-        })
-      : require('../CoursewarePage').default,
-    exact: true,
+      : require('../../layouts/index.js').default,
+    routes: [
+      {
+        path: '/CoursewarePage',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__CoursewarePage__index" */ '../CoursewarePage/index.js'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../CoursewarePage/index.js').default,
+      },
+      {
+        path: '/',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__index" */ '../index.tsx'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../index.tsx').default,
+      },
+      {
+        path: '/managementPage',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__managementPage__index" */ '../managementPage/index.js'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../managementPage/index.js').default,
+      },
+      {
+        path: '/managementPage/menu',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__managementPage__menu" */ '../managementPage/menu.js'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../managementPage/menu.js').default,
+      },
+      {
+        path: '/Mooc',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__Mooc__index" */ '../Mooc/index.js'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../Mooc/index.js').default,
+      },
+      {
+        path: '/Operation',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__Operation__index" */ '../Operation/index.js'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../Operation/index.js').default,
+      },
+      {
+        path: '/Operation/menu',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__Operation__menu" */ '../Operation/menu.js'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../Operation/menu.js').default,
+      },
+      {
+        path: '/WorkSpace',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__WorkSpace__index" */ '../WorkSpace/index.js'),
+              LoadingComponent: require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../WorkSpace/index.js').default,
+      },
+      {
+        component: () =>
+          React.createElement(
+            require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/node_modules/_umi-build-dev@1.18.5@umi-build-dev/lib/plugins/404/NotFound.js')
+              .default,
+            { pagesPath: 'src/pages', hasRoutesInConfig: false },
+          ),
+      },
+    ],
   },
   {
     component: () =>
       React.createElement(
-        require('F:/react_file/pro_file_two_bro/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/node_modules/_umi-build-dev@1.18.5@umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
-        { pagesPath: 'src/pages', hasRoutesInConfig: true },
+        { pagesPath: 'src/pages', hasRoutesInConfig: false },
       ),
   },
 ];

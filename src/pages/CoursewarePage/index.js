@@ -1,5 +1,5 @@
 import React from 'react';
-import BasicLayout from '../../Layout/layout';
+import BasicLayout from '../../layouts/index';
 
 const Upload = props => {
   return(

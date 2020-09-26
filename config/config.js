@@ -84,7 +84,7 @@ export default {
     ie: 9,
   },
   // 路由配置
-  routes: pageRoutes,
+  // routes: pageRoutes,
   // Theme for antd
   // https://ant.design/docs/react/customize-theme-cn
   theme: {

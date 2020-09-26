@@ -5,7 +5,7 @@ import asideMenuConfig from './menu';
 import style from './index.less';
 import 'antd/dist/antd.css'
 import menuManagement from "@/pages/managementPage/menu.js"
-import menuOperate from "@/pages/operation/menu.js"
+import menuOperate from "@/pages/Operation/menu.js"
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -61,21 +61,17 @@ const BasicLayout = props => {
         <div className={style.content_flex}>
           <Sider>
           <Menu>
-            {
-              menuList.map((item, index) => {
-                return (
-                  item.subMenu ? (
-                    <SubMenu key={index} title={item.name}>
-                      {item.subMenu.map((subItem, index) => (
-                        <Menu.Item key={subItem.key}>{subItem.name}</Menu.Item>
-                      ))}
-                    </SubMenu>
-                  ) : (
-                    <Menu.Item key={index}>{item.name}</Menu.Item>
-                  )
-                )
-              })
-            }
+            {menuList.map((item, index) => {
+              return ( item.subMenu ? (
+                <SubMenu key={index} title={item.name}>
+                  {item.subMenu.map((subItem, index) => (
+                    <Menu.Item key={subItem.key}>{subItem.name}</Menu.Item>
+                  ))}
+                </SubMenu>
+              ) : (
+                <Menu.Item key={index}>{item.name}</Menu.Item>
+              ))
+            })}
           </Menu>
           </Sider>
           <div className={style.content_flex_right}>
