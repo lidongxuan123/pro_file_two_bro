@@ -17,14 +17,21 @@ const BasicLayout = props => {
   let currentMenuList = [] //表示当前菜单项列表
   const handleRouter = (path) => {
     switch (path) {
-      case "upload":
-        currentMenuList = menuManagement
-        console.log(currentMenuList)
-      break;
       case "operation":
+        currentMenuList = menuManagement;
+        setMenuList(currentMenuList);
+      break;
+      case "course-ware":
         currentMenuList = menuOperate;
-        console.log(currentMenuList)
+        setMenuList(currentMenuList);
         break;
+       case "class":
+        currentMenuList = menuOperate;
+        setMenuList(currentMenuList);
+        break;
+      default:
+        currentMenuList = menuManagement;
+        setMenuList(currentMenuList)
     }
     history.push({ pathname: `/${path}`});
   };
@@ -33,7 +40,7 @@ const BasicLayout = props => {
     asideMenuConfig.map(item => {
       if (history.location.pathname === item.path) {
         setMenuName(item.name);
-        setMenuList(item.value)
+        setMenuList(menuManagement);
       }
     })
   }, [asideMenuConfig])
@@ -46,48 +53,30 @@ const BasicLayout = props => {
             <li onClick={() => handleRouter('')}>
               <img src={manange} alt="" />
             </li>
-            <li onClick={() => handleRouter('operation')}>管理操作</li>
-            <li onClick={() => handleRouter('upload')}>资料上传</li>
-            <li onClick={() => handleRouter('class')}>课程安排</li>
+            <li onClick={() => handleRouter('operation')}>管理</li>
+            <li onClick={() => handleRouter('course-ware')}>课件</li>
+            <li onClick={() => handleRouter('class')}>课程</li>
           </ul>
         </div>
         <div className={style.content_flex}>
           <Sider>
           <Menu>
             {
-              menuList.map((item, index) => (
-                if (item.subMenu) {
-                  <SubMenu key="index" title="item.name">
-                    {
-                      item.subMenu.map(subItem, index) =>(
+              menuList.map((item, index) => {
+                return (
+                  item.subMenu ? (
+                    <SubMenu key={index} title={item.name}>
+                      {item.subMenu.map((subItem, index) => (
                         <Menu.Item key={subItem.key}>{subItem.name}</Menu.Item>
-                      )
-                    }
-                  </SubMenu>
-                } else {
-                  <Menu.Item key={index}>{item.name}</Menu.Item>
-                }
-              ))
+                      ))}
+                    </SubMenu>
+                  ) : (
+                    <Menu.Item key={index}>{item.name}</Menu.Item>
+                  )
+                )
+              })
             }
           </Menu>
-
-
-
-            {/*<Menu
-              mode="inline"
-            >
-              <SubMenu
-                title={
-                  <span>
-                    <span>{menuName}</span>
-                  </span>
-                }
-              >
-                {menuList.map((item, index) => (
-                  <Menu.Item key={index}>{item}</Menu.Item>
-                ))}
-              </SubMenu>
-            </Menu>*/}
           </Sider>
           <div className={style.content_flex_right}>
             {props.children}

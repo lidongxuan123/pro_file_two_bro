@@ -27,15 +27,27 @@ const routes = [
     exact: true,
   },
   {
-    path: '/upload',
+    path: '/operation',
     component: __IS_BROWSER
       ? _dvaDynamic({
           component: () =>
-            import(/* webpackChunkName: "p__Upload" */ '../Upload'),
+            import(/* webpackChunkName: "p__OperationPage" */ '../OperationPage'),
           LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
             .default,
         })
-      : require('../Upload').default,
+      : require('../OperationPage').default,
+    exact: true,
+  },
+  {
+    path: '/course-ware',
+    component: __IS_BROWSER
+      ? _dvaDynamic({
+          component: () =>
+            import(/* webpackChunkName: "p__CoursewarePage" */ '../CoursewarePage'),
+          LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
+            .default,
+        })
+      : require('../CoursewarePage').default,
     exact: true,
   },
   {

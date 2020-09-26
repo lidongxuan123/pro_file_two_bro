@@ -2,7 +2,7 @@ export default [{
     flag: true,
     type: "2",
     name: "学生座次表",
-    key: "stu_position"
+    key: "stu_position",
     subMenu: [{
         flag: true,
         type: '2',

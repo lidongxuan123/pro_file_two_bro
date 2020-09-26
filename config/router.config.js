@@ -4,7 +4,11 @@ export default [
     component: './WorkSpace',
   },
   {
-    path: "/upload",
-    component: './Upload',
+    path: "/operation",
+    component: './OperationPage',
+  },
+  {
+    path: "/course-ware",
+    component: './CoursewarePage',
   }
 ];
