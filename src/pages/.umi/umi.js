@@ -6,7 +6,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import findRoute, {
   getUrlQuery,
-} from 'C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro/node_modules/_umi-build-dev@1.18.5@umi-build-dev/lib/findRoute.js';
+} from 'F:/react_file/pro_file_two_bro/node_modules/umi-build-dev/lib/findRoute.js';
 
 // runtime plugins
 const plugins = require('umi/_runtimePlugin');
@@ -23,9 +23,7 @@ plugins.init({
     'dva',
   ],
 });
-plugins.use(
-  require('../../../node_modules/_umi-plugin-dva@1.11.3@umi-plugin-dva/lib/runtime'),
-);
+plugins.use(require('../../../node_modules/umi-plugin-dva/lib/runtime'));
 
 const app = require('@tmp/dva')._onCreate();
 window.g_app = app;
@@ -222,14 +220,12 @@ export default (__IS_BROWSER ? null : serverRender);
     if (isIE) return;
 
     // Umi UI Bubble
-    require('../../../node_modules/_umi-plugin-ui@1.5.3@umi-plugin-ui/lib/bubble').default(
-      {
-        port: 3000,
-        path: 'C:/Users/DELL/Desktop/MyProject/project/pro_file_two_bro',
-        currentProject: '',
-        isBigfish: undefined,
-      },
-    );
+    require('../../../node_modules/umi-plugin-ui/lib/bubble').default({
+      port: 3000,
+      path: 'F:/react_file/pro_file_two_bro',
+      currentProject: '',
+      isBigfish: undefined,
+    });
   } catch (e) {
     console.warn('Umi UI render error:', e);
   }
@@ -237,7 +233,7 @@ export default (__IS_BROWSER ? null : serverRender);
 
 (() => {
   // Runtime block add component
-  window.GUmiUIFlag = require('../../../node_modules/_umi-build-dev@1.18.5@umi-build-dev/lib/plugins/commands/block/sdk/flagBabelPlugin/GUmiUIFlag.js').default;
+  window.GUmiUIFlag = require('../../../node_modules/umi-build-dev/lib/plugins/commands/block/sdk/flagBabelPlugin/GUmiUIFlag.js').default;
 
   // Enable/Disable block add edit mode
   window.addEventListener(

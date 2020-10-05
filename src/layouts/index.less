@@ -7,6 +7,9 @@
   height: 60px;
   line-height: 60px;
 }
+ .active{
+    background: red;
+}
 .menu_ui{
     list-style: none;
     height: 60px;
@@ -21,8 +24,13 @@
         }
     }
 }
+.menu_ui li{
+    padding:0 20px;
+}
 @content_width: 'calc(100% - 60px)';
 div.content_flex {
+    overflow-y: auto;
+    overflow-x: hidden; 
     width:100%;
     height: calc(100% - 60px);
     background: #DFDFDF;
@@ -36,5 +44,14 @@ div.content_flex {
     div.style.content_flex_right{
         width: 0;
         flex-grow: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
+}
+ div.content_flex_right_breadcurmb{
+    height: 30px;
+    padding-left: 14px;
+}
+:global(.ant-breadcrumb){
+        line-height: 40px !important;
 }
