@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { Breadcrumb } from 'antd';
 import manange from '@/assets/manage.svg';
-import asideMenuConfig from './menu';
 import style from './index.less';
 import 'antd/dist/antd.css'
 import menuManagement from "@/pages/managementPage/menu.js"
@@ -39,16 +38,14 @@ const BasicLayout = props => {
     history.push({ pathname: `/${path}`});
   };
 
-  useEffect(() => {
-    asideMenuConfig.map(item => {
-      if (history.location.pathname === item.path) {
-        setMenuName(item.name);
-        setMenuList(menuManagement);
-      }
-    })
-  }, [asideMenuConfig])
-
+  useEffect(()=>{
+    console.log('---------')
+    console.log(props)
+    console.log(this)
+    }
+  )
   return(
+   
     <Layout>
       <div className={style.app}>
         <div className={style.menu}>
