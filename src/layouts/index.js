@@ -9,39 +9,32 @@ import menuOperate from "@/pages/Operation/menu.js"
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
+let currentMenuList = [] //表示当前菜单项列表
 const history = window.g_history;
 
 const BasicLayout = props => {
   const [menuName, setMenuName] = useState('');
   const [menuList, setMenuList] = useState([]);
   const [flag, setFlag] = useState(0)
-  let currentMenuList = [] //表示当前菜单项列表
-  const setValue = (vulue) => {
-    setMenuList(vulue);
-  }
+
   const handleRouter = (path, index) => {
-    console.log(index)
     setFlag(index)
     switch (path) {
       case "operation":
         currentMenuList = menuManagement;
-        // setValue(currentMenuList)
         setMenuList(currentMenuList);
         break;
       case "course-ware":
         currentMenuList = menuOperate;
         setMenuList(currentMenuList);
-        // setValue(currentMenuList)
         break;
       case "class":
         currentMenuList = menuOperate;
         setMenuList(currentMenuList);
-        // setValue(currentMenuList)
         break;
       default:
         currentMenuList = menuManagement;
         setMenuList(currentMenuList)
-        // setValue(currentMenuList)
     }
     history.push({ pathname: `/${path}` });
   };
@@ -49,16 +42,11 @@ const BasicLayout = props => {
   useEffect(() => {
     const { history } = props
     if (history.location.pathname === '/') {
-      history.push({
-        pathname: "/operation"
-      })
+      history.push({ pathname: "/operation" });
+      handleRouter("operation", 0);
     }
-    const func = () => {
-      handleRouter('operation', 4)
-    }
-    func()
-  }
-  )
+  }, [menuList])
+
   return (
 
     <Layout>
