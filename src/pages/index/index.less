@@ -1,0 +1,96 @@
+@width:216px;
+@height:180px;
+@font-size: 16px;
+.div_main{
+    min-width: 700px;
+}
+.peration_div_main{
+    display: inline-block;
+    margin:10px 15px;
+    // width: @width;
+    position: relative;
+    width: @width;
+    height: @height;
+    box-sizing: border-box;
+    box-shadow: 0 0 3px #333;
+}
+.div_p_content{
+    width:100%;
+    height: 28px;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+}
+.p_tag{
+    margin: 5px ;
+}
+.p_style{
+font-size: 14px;
+font-weight: bold;
+}
+.span_style{
+font-size: 14px;
+position: relative;
+}
+.marginL20{
+  margin-left: 20px;
+}
+.operation_all{
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 1;
+    background: white;
+    width: @width;
+    height: @height;
+    padding: 6px 8px;
+    display: flex;
+    font-size: 14px;
+    justify-content: space-around;
+    transform-origin: 0 0;
+    transform: rotateX(90deg);
+    transition: 0.3s linear;
+    line-height: @height;
+}
+.div_watchWord{
+    position: absolute;
+    left:0;
+    top: 20px;
+    padding:6px 8px;
+    width: 200px;
+}
+.div_watchword_div{
+    min-width: 100px;
+    background: #FFFFFF;
+}
+.peration_div_main_info{
+    padding:6px 8px;
+    
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.peration_div_main:hover .operation_all{
+    transform: rotateX(0deg);
+    width: @width;
+    height: @height;
+    z-index: 22;
+}
+.operation_all_ope:hover {
+color:#1890FF;
+cursor: pointer;
+}
+.icon_word {
+    font-size: 14px;
+    background: red;
+}
+.icon_size {
+    font-size: 16px;
+}
+:global(.icon_size) {
+    font-size: 20px;
+    cursor: pointer;
+    &:hover{
+        color: #1890FF;
+    }
+}

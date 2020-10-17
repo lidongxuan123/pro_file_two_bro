@@ -38,6 +38,42 @@ const routes = [
           : require('../CoursewarePage/index.js').default,
       },
       {
+        path: '/index/data',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__index__data" */ '../index/data.js'),
+              LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../index/data.js').default,
+      },
+      {
+        path: '/',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__index__index" */ '../index/index.js'),
+              LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../index/index.js').default,
+      },
+      {
+        path: '/index/menu',
+        exact: true,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () =>
+                import(/* webpackChunkName: "p__index__menu" */ '../index/menu.js'),
+              LoadingComponent: require('F:/react_file/pro_file_two_bro/src/components/PageLoading/index')
+                .default,
+            })
+          : require('../index/menu.js').default,
+      },
+      {
         path: '/',
         exact: true,
         component: __IS_BROWSER
