@@ -16,36 +16,51 @@ const BasicLayout = props => {
   const [menuList, setMenuList] = useState([]);
   const [flag, setFlag] = useState(0)
   let currentMenuList = [] //表示当前菜单项列表
-  const handleRouter = (path,index) => {
+  const setValue = (vulue) => {
+    setMenuList(vulue);
+  }
+  const handleRouter = (path, index) => {
+    console.log(index)
     setFlag(index)
     switch (path) {
       case "operation":
         currentMenuList = menuManagement;
+        // setValue(currentMenuList)
         setMenuList(currentMenuList);
-      break;
+        break;
       case "course-ware":
         currentMenuList = menuOperate;
         setMenuList(currentMenuList);
+        // setValue(currentMenuList)
         break;
-       case "class":
+      case "class":
         currentMenuList = menuOperate;
         setMenuList(currentMenuList);
+        // setValue(currentMenuList)
         break;
       default:
         currentMenuList = menuManagement;
         setMenuList(currentMenuList)
+        // setValue(currentMenuList)
     }
-    history.push({ pathname: `/${path}`});
+    history.push({ pathname: `/${path}` });
   };
 
-  useEffect(()=>{
-    console.log('---------')
-    console.log(props)
-    console.log(this)
+  useEffect(() => {
+    const { history } = props
+    if (history.location.pathname === '/') {
+      history.push({
+        pathname: "/operation"
+      })
     }
+    const func = () => {
+      handleRouter('operation', 4)
+    }
+    func()
+  }
   )
-  return(
-   
+  return (
+
     <Layout>
       <div className={style.app}>
         <div className={style.menu}>
@@ -53,45 +68,45 @@ const BasicLayout = props => {
             <li onClick={() => handleRouter('')}>
               <img src={manange} alt="" />
             </li>
-            <li className={ flag == 0? style.active: ''} onClick={() => handleRouter('operation', 0)}>管理</li>
-            <li className={ flag == 1? style.active: ''} onClick={() => handleRouter('course-ware',  1)}>课件</li>
-            <li className={ flag == 2? style.active: ''} onClick={() => handleRouter('class',  2)}>课程</li>
+            <li className={flag == 0 ? style.active : ''} onClick={() => handleRouter('operation', 0)}>管理</li>
+            <li className={flag == 1 ? style.active : ''} onClick={() => handleRouter('course-ware', 1)}>课件</li>
+            <li className={flag == 2 ? style.active : ''} onClick={() => handleRouter('class', 2)}>课程</li>
           </ul>
         </div>
         <div className={style.content_flex}>
           <Sider>
-          <Menu mode="inline" theme="dark">
-            {menuList.map((item, index) => {
-              console.log(item)
-              return ( item.subMenu ? (
-                <SubMenu key={index} title={item.name}>
-                  {item.subMenu.map((subItem, index) => (
-                    <Menu.Item title={subItem.name} key={subItem.key}>{subItem.name}</Menu.Item>
-                  ))}
-                </SubMenu>
-              ) : (
-                <Menu.Item key={index}>{item.name}</Menu.Item>
-              ))
-            })}
-          </Menu>
+            <Menu mode="inline" theme="dark">
+              {menuList.map((item, index) => {
+                console.log(item)
+                return (item.subMenu ? (
+                  <SubMenu key={index} title={item.name}>
+                    {item.subMenu.map((subItem, index) => (
+                      <Menu.Item title={subItem.name} key={subItem.key}>{subItem.name}</Menu.Item>
+                    ))}
+                  </SubMenu>
+                ) : (
+                    <Menu.Item key={index}>{item.name}</Menu.Item>
+                  ))
+              })}
+            </Menu>
           </Sider>
           <div className={style.content_flex_right}>
             <div className={style.content_flex_right_breadcurmb}>
-               <Breadcrumb>
-                  {props.children.props.location instanceof Object ?
+              <Breadcrumb>
+                {props.children.props.location instanceof Object ?
                   (<Breadcrumb.Item >
                     管理页
                     </Breadcrumb.Item>) : (
-                      props.children.props.location.map((element,index)=>{
-                        <Breadcrumb.Item >
-                          <a href="">{element.key}</a>
-                        </Breadcrumb.Item>
-                      })
-                    )
-                  }
+                    props.children.props.location.map((element, index) => {
+                      <Breadcrumb.Item >
+                        <a href="">{element.key}</a>
+                      </Breadcrumb.Item>
+                    })
+                  )
+                }
               </Breadcrumb>
             </div>
-              {/*props.children.props.location.map((element, index)=> {
+            {/*props.children.props.location.map((element, index)=> {
                 return (<Breadcrumb.Item >
               
                 </Breadcrumb.Item>)
