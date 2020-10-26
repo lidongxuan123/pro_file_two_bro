@@ -48,11 +48,11 @@ const Operation = () => {
                                     </p>
                                 </div>
                             </div>
-                             <div className={style.operation_all}>
+                             {/*<div className={style.operation_all}>
                                     <i className="icon_size iconfont web-4tianjiajiahaoyoutianjiapengyou"></i>
                                     <i className="icon_size iconfont web-4bianji"></i>
                                     <i className="icon_size iconfont web-4web-icon-"></i>
-                                </div>
+                                </div>*/}
                         </div>)
                     })
                 }

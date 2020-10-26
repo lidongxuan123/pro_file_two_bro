@@ -78,7 +78,7 @@ const BasicLayout = props => {
               })}
             </Menu>
           </Sider>
-          <div className={style.content_flex_right}>
+          <div style={{'overflow-y': "scroll", 'overflow-x': 'hidden'}} className={style.content_flex_right}>
             <div className={style.content_flex_right_breadcurmb}>
               <Breadcrumb>
                 {props.children.props.location instanceof Object ?
